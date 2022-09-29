@@ -17,8 +17,8 @@ const db = new Sequelize({
 	? {
 		ssl:{
 			required: true,
-			rejectUnaUnathorized: false,
-		
+			rejectUnauthorized: false,
+			
 		},
 	}
 	:{},
