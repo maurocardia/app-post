@@ -18,7 +18,10 @@ const app = express();
 app.use(express.json());
 app.use(helmet())
 app.use(compression())
-app.use(morgan("combined"))
+
+if (process.env.NODE_ENV === "development") app.use(morgan("dev"))
+else app.use(morgan("combined"))
+
 // Define endpoints
 // /posts
 app.use('/api/v1/users', usersRouter);
